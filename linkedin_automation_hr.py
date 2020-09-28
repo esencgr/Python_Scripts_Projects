@@ -59,7 +59,6 @@ for i in range ( 0, 10 ):
         name = browser.find_element_by_class_name('discover-person-card__name')
         print()
         print( "* " + name.text + " - " + content.text)
-
         time.sleep( 3 )
   
         button = browser.find_element_by_class_name('full-width')
