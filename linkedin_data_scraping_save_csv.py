@@ -1,4 +1,5 @@
 from selenium import webdriver
+import pandas as pd 
 import time
 
 mail = input( "mail : " )
@@ -21,15 +22,14 @@ time.sleep( 5 )
 usr = browser.find_element_by_xpath( "//*[@id='username']" )
 pss = browser.find_element_by_xpath( "//*[@id='password']" )
 
-
 # enter username and psw and click 
 usr.send_keys( mail )
 time.sleep( 5 )
 pss.send_keys( pwd )
 time.sleep( 5 )
 
-# click login
-log = browser.find_element_by_xpath("//*[@id='app__container']/main/div[2]/form/div[4]/button")
+# click sign in
+log = browser.find_element_by_xpath("//*[@id='app__container']/main/div[2]/form/div[3]/button")
 log.click()
 time.sleep( 5 )
 
@@ -40,10 +40,14 @@ time.sleep( 5 )
 
 # the selection do for this keyword 
 key_word = ['Human','Software','HR','Leader','Manager','Founder','Recruitment',
-            'Machine Learning','Data','Vision', ]
+            'Machine Learning','Data','Vision','Kocaeli' ]
 
 sz = len( key_word )
 count = 0
+d = dict()
+data = dict()
+lst_name = list()
+lst_role = list()
 
 for i in range ( 0, 10 ):
     content = browser.find_element_by_class_name('discover-person-card__occupation')
@@ -57,8 +61,16 @@ for i in range ( 0, 10 ):
             
     if var == True:
         name = browser.find_element_by_class_name('discover-person-card__name')
-        print()
+        
+        lst_name.append( name.text )
+        lst_role.append( content.text )
+        
         print( "* " + name.text + " - " + content.text)
+
+        d = { 'names' : lst_name, 'roles' : lst_role }
+        data.update( d ) 
+        df = pd.DataFrame( data )        
+
         time.sleep( 3 )
   
         button = browser.find_element_by_class_name('full-width')
@@ -76,7 +88,11 @@ for i in range ( 0, 10 ):
         time.sleep( 3 )
 
 print( f"\ntotal new connection = {count}" )
+print( data )
 
-# close browser
+# # Saving the data into a csv file
+df.to_csv("data.csv",index=False) 
+
+#close browser
 browser.close()
 
