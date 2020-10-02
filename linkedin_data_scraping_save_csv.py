@@ -4,6 +4,7 @@ import time
 
 mail = input( "mail : " )
 pwd = input( "password : " )
+number_of_scans = int( input( "how many people do you want scan : " ))
 
 # start webdriver
 browser = webdriver.Chrome()
@@ -38,61 +39,70 @@ my_net = browser.find_element_by_xpath('//*[@id="ember23"]')
 my_net.click()
 time.sleep( 5 )
 
-# the selection do for this keyword 
+# data scraping part
 key_word = ['Human','Software','HR','Leader','Manager','Founder','Recruitment',
-            'Machine Learning','Data','Vision','Kocaeli' ]
+            'Machine Learning','Data','Vision' ]
 
-sz = len( key_word )
-count = 0
-d = dict()
-data = dict()
-lst_name = list()
-lst_role = list()
+def search( con, keys ):
+    sz = len( key_word )
 
-for i in range ( 0, 10 ):
-    content = browser.find_element_by_class_name('discover-person-card__occupation')
-    time.sleep( 3 ) 
-    content_sp = content.text.split()
-    var = False
-    
     for k in range ( 0, sz ):    
-        if  key_word[k] in content_sp: 
-            var = True
-            
-    if var == True:
-        name = browser.find_element_by_class_name('discover-person-card__name')
-        
-        lst_name.append( name.text )
-        lst_role.append( content.text )
-        
-        print( "* " + name.text + " - " + content.text)
+        if  keys[k] in con: 
+            return True
 
-        d = { 'names' : lst_name, 'roles' : lst_role }
-        data.update( d ) 
-        df = pd.DataFrame( data )        
-
-        time.sleep( 3 )
-  
-        button = browser.find_element_by_class_name('full-width')
-        button.click()
-        time.sleep( 3 )
-        
-        exit_b = browser.find_element_by_class_name('artdeco-card__dismiss')
-        exit_b.click()
-        time.sleep( 3 )
-        count = count + 1
+def selection_action( key_word, browser ) :
+    count = 0
+    d = dict()
+    data = dict()
+    lst_name = list()
+    lst_role = list()
+    
+    for i in range ( 0, number_of_scans ):
+        content = browser.find_element_by_class_name('discover-person-card__occupation')
+        time.sleep( 3 ) 
+        content_sp = content.text.split()        
                 
-    else:
-        exit_b = browser.find_element_by_class_name('artdeco-card__dismiss')
-        exit_b.click()
-        time.sleep( 3 )
+        if( search( content_sp, key_word )):
+            print( )
+            name = browser.find_element_by_class_name('discover-person-card__name')
+            print( "* " + name.text + " - " + content.text)
 
-print( f"\ntotal new connection = {count}" )
-print( data )
+            lst_name.append( name.text )
+            lst_role.append( content.text )
+            
+            d = { 'names' : lst_name, 'roles' : lst_role }
+            data.update( d ) 
+            time.sleep( 3 )
+      
+            button = browser.find_element_by_class_name('full-width')
+            button.click()
+            time.sleep( 3 )
+            
+            exit_b = browser.find_element_by_class_name('artdeco-card__dismiss')
+            exit_b.click()
+            time.sleep( 3 )
+            count = count + 1
+                    
+        else:
+            exit_b = browser.find_element_by_class_name('artdeco-card__dismiss')
+            exit_b.click()
+            time.sleep( 3 )
 
-# # Saving the data into a csv file
-df.to_csv("data.csv",index=False) 
+    print( f"\ntotal new connection = {count}" )
+    
+    # Creating to dataframe from data dictionary
+    df = pd.DataFrame( data, columns = ['names', 'roles'] )        
+    print( df )
+    
+    # # Saving the data into a csv file,
+    df.to_csv("data.csv",index=False) 
+    
+
+selection_action(key_word, browser)
 
 #close browser
 browser.close()
+
+
+
 
