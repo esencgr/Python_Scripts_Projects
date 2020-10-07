@@ -5,6 +5,7 @@ import time
 mail = input( "mail : " )
 pwd = input( "password : " )
 number_of_scans = int( input( "how many people do you want scan : " ))
+tm = 3 
 
 # start webdriver
 browser = webdriver.Chrome()
@@ -12,12 +13,12 @@ browser = webdriver.Chrome()
 # get source code
 linkedin_url = "https://www.linkedin.com/"
 browser.get( linkedin_url ) 
-time.sleep( 5 )
+time.sleep( tm )
 
 # click login button 
 log_in = browser.find_element_by_class_name( 'nav__button-secondary' )
 log_in.click()
-time.sleep( 5 )
+time.sleep( tm )
 
 # enter your password end mail
 usr = browser.find_element_by_xpath( "//*[@id='username']" )
@@ -25,19 +26,19 @@ pss = browser.find_element_by_xpath( "//*[@id='password']" )
 
 # enter username and psw and click 
 usr.send_keys( mail )
-time.sleep( 5 )
+time.sleep( tm )
 pss.send_keys( pwd )
-time.sleep( 5 )
+time.sleep( tm )
 
 # click sign in
 log = browser.find_element_by_xpath("//*[@id='app__container']/main/div[2]/form/div[3]/button")
 log.click()
-time.sleep( 5 )
+time.sleep( tm )
 
 # click my network tab
 my_net = browser.find_element_by_xpath('//*[@id="ember23"]')
 my_net.click()
-time.sleep( 5 )
+time.sleep( tm )
 
 # data scraping part
 key_word = ['Human','Software','HR','Leader','Manager','Founder','Recruitment',
@@ -59,7 +60,7 @@ def selection_action( key_word, browser ) :
     
     for i in range ( 0, number_of_scans ):
         content = browser.find_element_by_class_name('discover-person-card__occupation')
-        time.sleep( 3 ) 
+        time.sleep( tm ) 
         content_sp = content.text.split()        
                 
         if( search( content_sp, key_word )):
@@ -72,21 +73,21 @@ def selection_action( key_word, browser ) :
             
             d = { 'names' : lst_name, 'roles' : lst_role }
             data.update( d ) 
-            time.sleep( 3 )
+            time.sleep( tm )
       
             button = browser.find_element_by_class_name('full-width')
             button.click()
-            time.sleep( 3 )
+            time.sleep( tm )
             
             exit_b = browser.find_element_by_class_name('artdeco-card__dismiss')
             exit_b.click()
-            time.sleep( 3 )
+            time.sleep( tm )
             count = count + 1
                     
         else:
             exit_b = browser.find_element_by_class_name('artdeco-card__dismiss')
             exit_b.click()
-            time.sleep( 3 )
+            time.sleep( tm )
 
     print( f"\ntotal new connection = {count}" )
     
