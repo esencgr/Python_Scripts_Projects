@@ -70,6 +70,14 @@ At the beginning there are 4 steps before access the data paart.
 
 7- Saves this informations as a csv file.  
 
+### ***Example Work***
 
+For this keyword :
 
+ ```bash
+ key_word = ['Human','Software','HR','Leader','Manager','Founder','Recruitment','Machine Learning','Data','Vision', ]
+ 
+```
+The generated csv file :
 
+[data.csv](https://github.com/esencgr/Python_Projects/blob/master/Data_Scraping/linkedin_data_scraping.py)
