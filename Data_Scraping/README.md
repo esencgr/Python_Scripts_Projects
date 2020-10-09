@@ -21,7 +21,7 @@ Linkedin Bot which select and add the people according to given keywords.
 pip install -U selenium pandas 
 
 ```
-*You can install chromedriver :*
+*To install chromedriver :*
 
 1. Go to chrome://settings/help and find out which is your Chrome's version
 2. Go to https://chromedriver.chromium.org/downloads and find the latest version which supports your Chrome's version.
@@ -29,7 +29,7 @@ pip install -U selenium pandas
 4. Pick the executable and put in drivers' folder.
 5. Replace and rename the executable with one that was already inside driver's folder depending on your O.S.
  
- *And check the dependencies :*
+*And check the dependencies :*
 
  ```bash
 import pandas
@@ -45,13 +45,13 @@ print( webdriver.__version__)
 
 At the beginning there are 4 steps before access the data paart.
 
-1- Get user information ( email and password ) and get number of people to be scanned.
+1- Gets user information ( email and password ) and get number of people to be scanned.
 
-2- Go to website url.
+2- Goes to website url.
 
-3- Login with user information.
+3- Logins with user information.
 
-4- Pass to the network section on the linkedin.
+4- Passes to the network section on the linkedin.
 
 
 ### Accessing & Selecting Data :
@@ -70,6 +70,16 @@ At the beginning there are 4 steps before access the data paart.
 
 7- Saves this informations as a csv file.  
 
+### ***Example Work***
 
+For this keyword :
 
+ ```bash
+ key_word = ['Human','Software','HR','Leader','Manager','Founder','Recruitment','Machine Learning','Data','Vision', ]
+ 
+```
+The csv file generated like this (created by mockaroo for in terms of data security) :
 
+[data.csv](https://github.com/esencgr/Python_Projects/blob/master/Data_Scraping/data.csv)
+
+![Screenshot from 2020-10-09 18-25-36](https://user-images.githubusercontent.com/32637622/95602178-33aacd00-0a5d-11eb-9b3f-ac91d968de0d.png)
