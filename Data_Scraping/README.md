@@ -21,7 +21,7 @@ Linkedin Bot which select and add the people according to given keywords.
 pip install -U selenium pandas 
 
 ```
-*You can install chromedriver :*
+*To install chromedriver :*
 
 1. Go to chrome://settings/help and find out which is your Chrome's version
 2. Go to https://chromedriver.chromium.org/downloads and find the latest version which supports your Chrome's version.
@@ -29,7 +29,7 @@ pip install -U selenium pandas
 4. Pick the executable and put in drivers' folder.
 5. Replace and rename the executable with one that was already inside driver's folder depending on your O.S.
  
- *And check the dependencies :*
+*And check the dependencies :*
 
  ```bash
 import pandas
@@ -81,4 +81,5 @@ For this keyword :
 The generated csv file :
 
 [data.csv](https://github.com/esencgr/Python_Projects/blob/master/Data_Scraping/data.csv)
+
 ![Screenshot from 2020-10-09 18-25-36](https://user-images.githubusercontent.com/32637622/95602178-33aacd00-0a5d-11eb-9b3f-ac91d968de0d.png)
