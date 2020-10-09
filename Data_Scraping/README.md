@@ -80,4 +80,4 @@ For this keyword :
 ```
 The generated csv file :
 
-[data.csv](https://github.com/esencgr/Python_Projects/blob/master/Data_Scraping/linkedin_data_scraping.py)
+[data.csv](https://github.com/esencgr/Python_Projects/blob/master/Data_Scraping/data.csv)
