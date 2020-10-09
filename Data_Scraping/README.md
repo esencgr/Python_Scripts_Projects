@@ -81,3 +81,4 @@ For this keyword :
 The generated csv file :
 
 [data.csv](https://github.com/esencgr/Python_Projects/blob/master/Data_Scraping/data.csv)
+![Screenshot from 2020-10-09 18-25-36](https://user-images.githubusercontent.com/32637622/95602178-33aacd00-0a5d-11eb-9b3f-ac91d968de0d.png)
