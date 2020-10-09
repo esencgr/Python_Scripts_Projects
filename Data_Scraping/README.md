@@ -78,8 +78,7 @@ For this keyword :
  key_word = ['Human','Software','HR','Leader','Manager','Founder','Recruitment','Machine Learning','Data','Vision', ]
  
 ```
-The csv file generated like this: 
-(created by mockaroo for in terms of data security) :
+The csv file generated like this (created by mockaroo for in terms of data security) :
 
 [data.csv](https://github.com/esencgr/Python_Projects/blob/master/Data_Scraping/data.csv)
 
