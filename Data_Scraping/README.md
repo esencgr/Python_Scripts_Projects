@@ -45,13 +45,13 @@ print( webdriver.__version__)
 
 At the beginning there are 4 steps before access the data paart.
 
-1- Get user information ( email and password ) and get number of people to be scanned.
+1- Gets user information ( email and password ) and get number of people to be scanned.
 
-2- Go to website url.
+2- Goes to website url.
 
-3- Login with user information.
+3- Logins with user information.
 
-4- Pass to the network section on the linkedin.
+4- Passes to the network section on the linkedin.
 
 
 ### Accessing & Selecting Data :
