@@ -17,7 +17,7 @@ Linkedin Bot which select and add the people according to given keywords.
  
  *To install this packages run the python installation instruction below in the command line:*
   
- ```bash
+ ```python
 pip install -U selenium pandas 
 
 ```
@@ -31,7 +31,7 @@ pip install -U selenium pandas
  
 *And check the dependencies :*
 
- ```bash
+ ```python
 import pandas
 import selenium
 from selenium import webdriver
