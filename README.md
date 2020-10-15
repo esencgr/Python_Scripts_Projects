@@ -1,2 +1,2 @@
 # Python_Projects
-Beginner Projects with Python - Data Extraction & Dataset Creation - Intro to Data Science 
+Beginner Projects with Python - Data Extraction & Data Scraping & Dataset Creation & Intro to Data Science 
