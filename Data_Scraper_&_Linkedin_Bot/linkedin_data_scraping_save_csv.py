@@ -44,12 +44,12 @@ time.sleep( tm )
 key_word = ['Human','Software','HR','Leader','Manager','Founder','Recruitment',
             'Machine Learning','Data','Vision',"Python", "C++"]
 
-def search( con, keys ):
-    for c in con:    
-        if  c in keys: 
-            return True   
+# def search( con, keys ):
+#     for c in con:    
+#         if  c in keys: 
+#             return True   
 
-def selection_action( key_word, browser ) :
+def selection( key_word, browser ) :
     count = 0
     d = dict()
     data = dict()
@@ -61,9 +61,9 @@ def selection_action( key_word, browser ) :
         time.sleep( tm ) 
         content_sp = content.text.split()        
 
-        search_1 = bool ( [ True for c in content_sp if c in key_word ] )
-
-        if( search( content_sp, key_word ) ):
+        search_one_line = bool( [ True for c in content_sp if c in key_word ] )
+        
+        if( search_one_line ):   # for search function -> search( content_sp, key_word )
             print( )
             name = browser.find_element_by_class_name('discover-person-card__name')
             print( "* " + name.text + " - " + content.text)
@@ -99,7 +99,7 @@ def selection_action( key_word, browser ) :
     df.to_csv("data_1.csv",index=False) 
     
 
-selection_action(key_word, browser)
+selection(key_word, browser)
 
 #close browser
 browser.close()
