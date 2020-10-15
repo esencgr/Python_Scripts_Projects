@@ -9,7 +9,7 @@ Linkedin Bot which select and add the people according to given keywords.
 
  - Python 3.8
  - Pandas 1.0.5
- - Selenium 3.141.0  
+ - Selenium 3.141.0
  - Webdriver
 
 
@@ -17,7 +17,7 @@ Linkedin Bot which select and add the people according to given keywords.
  
  *To install this packages run the python installation instruction below in the command line:*
   
- ```python
+```python
 pip install -U selenium pandas 
 
 ```
@@ -31,7 +31,7 @@ pip install -U selenium pandas
  
 *And check the dependencies :*
 
- ```python
+```python
 import pandas
 import selenium
 from selenium import webdriver
@@ -74,7 +74,7 @@ At the beginning there are 4 steps before access the data paart.
 
 For this keyword :
 
- ```bash
+```bash
  key_word = ['Human','Software','HR','Leader','Manager','Founder','Recruitment','Machine Learning','Data','Vision', ]
  
 ```
