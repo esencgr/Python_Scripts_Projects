@@ -42,14 +42,12 @@ time.sleep( tm )
 
 # data scraping part
 key_word = ['Human','Software','HR','Leader','Manager','Founder','Recruitment',
-            'Machine Learning','Data','Vision' ]
+            'Machine Learning','Data','Vision',"Python", "C++"]
 
 def search( con, keys ):
-    sz = len( key_word )
-
-    for k in range ( 0, sz ):    
-        if  keys[k] in con: 
-            return True
+    for c in con:    
+        if  c in keys: 
+            return True   
 
 def selection_action( key_word, browser ) :
     count = 0
@@ -62,8 +60,10 @@ def selection_action( key_word, browser ) :
         content = browser.find_element_by_class_name('discover-person-card__occupation')
         time.sleep( tm ) 
         content_sp = content.text.split()        
-                
-        if( search( content_sp, key_word )):
+
+        search_1 = bool ( [ True for c in content_sp if c in key_word ] )
+
+        if( search( content_sp, key_word ) ):
             print( )
             name = browser.find_element_by_class_name('discover-person-card__name')
             print( "* " + name.text + " - " + content.text)
@@ -96,7 +96,7 @@ def selection_action( key_word, browser ) :
     print( df )
     
     # # Saving the data into a csv file,
-    df.to_csv("data.csv",index=False) 
+    df.to_csv("data_1.csv",index=False) 
     
 
 selection_action(key_word, browser)
