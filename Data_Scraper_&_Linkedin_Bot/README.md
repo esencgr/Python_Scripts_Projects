@@ -89,13 +89,13 @@ search_one_line = bool( [ True for c in content_sp if c in key_word ] )
 
 search_one_line
 ```
-If the scraped data (role information) include one of the keywords both of these functions return "True" value. 
+If the scraped data (role information) include one of the keywords both of these ways return "True" value. 
 
 ### ***Example Work***
 
 For this keyword :
 
-```bash
+```python
  key_word = ['Human','Software','HR','Leader','Manager','Founder','Recruitment','Machine Learning','Data','Vision', ]
  
 ```
