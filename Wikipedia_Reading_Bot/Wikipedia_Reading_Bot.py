@@ -5,7 +5,8 @@ import scroll_module
 step = int( input( "step : " ) )
 
 # start webdriver
-browser = webdriver.Chrome()
+
+browser = webdriver.Chrome(executable_path='/usr/bin/chromedriver')
 
 # get source code
 viki_url = "https://tr.wikipedia.org/wiki/Vikipedi"
