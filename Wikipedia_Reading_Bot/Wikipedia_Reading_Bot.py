@@ -6,7 +6,7 @@ step = int( input( "step : " ) )
 
 # start webdriver
 
-browser = webdriver.Chrome(executable_path='/usr/bin/chromedriver')
+browser = webdriver.Chrome()
 
 # get source code
 viki_url = "https://tr.wikipedia.org/wiki/Vikipedi"
