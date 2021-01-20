@@ -36,9 +36,9 @@ log.click()
 time.sleep( tm )
 
 # click my network tab
-my_net = browser.find_element_by_xpath('//*[@id="ember23"]')
+my_net = browser.find_element_by_xpath('//*[@id="ember26"]')
 my_net.click()
-time.sleep( tm )
+time.sleep( tm*2 )
 
 # data scraping part
 key_word = ['Human','Software','HR','Leader','Manager','Founder','Recruitment',
