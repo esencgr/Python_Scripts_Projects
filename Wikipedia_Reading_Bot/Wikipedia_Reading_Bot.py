@@ -18,7 +18,3 @@ scroll_module.scroll_end_of_page( browser, step )
 
 #close browser
 browser.close()
-
-
-
-
