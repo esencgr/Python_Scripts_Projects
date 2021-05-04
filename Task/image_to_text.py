@@ -8,7 +8,6 @@ def img_to_str(img):
 
 if __name__ == "__main__":
     os.environ['DISPLAY'] = ':0'   
-    
     # creating a object 
     img = Image.open("/home/cgr/Python/Task/images/ocr.png") 
     img.show()
