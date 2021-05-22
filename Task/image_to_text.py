@@ -9,7 +9,7 @@ def img_to_str(img):
 if __name__ == "__main__":
     os.environ['DISPLAY'] = ':0'   
     # creating a object 
-    img = Image.open("/home/cgr/Python/Python_Scripts_Projects/Task/images/ocr.png") 
+    img = Image.open("/home/cgr/Python_Scripts_Projects/Task/images/ocr.png") 
     img.show()
 
     # text_data = pytesseract.image_to_string(img.convert('RGB'), lang='eng')
