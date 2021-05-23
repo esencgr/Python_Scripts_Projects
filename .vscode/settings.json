@@ -1,3 +1,10 @@
 {
-    "python.pythonPath": "/home/cgr/anaconda3/bin/python3.7"
+    "C_Cpp.errorSquiggles": "Disabled",
+    "python.pythonPath": "/home/cgr/anaconda3/bin/python3.7",
+    "jupyter.jupyterServerType": "local",
+    "editor.tokenColorCustomizations": null,
+    "python.languageServer": "JediLSP",
+    "python.linting.enabled": false,
+    // "python.linting.enabled": false,
+
 }
